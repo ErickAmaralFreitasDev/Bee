@@ -59,9 +59,9 @@ namespace Beehive
 
     }
 
-    public class Bee
+    public abstract class Bee
     {
-        public virtual float CostPerShift { get; }
+        public abstract float CostPerShift { get; }
 
         public string Job { get; private set; }
         public Bee(string job)
@@ -77,10 +77,7 @@ namespace Beehive
             }
         }
 
-        protected virtual void DoJob()
-        {
-            /*Métodos implementados em cada sub-classe*/
-        }
+        protected abstract void DoJob();
     }
 
     public class Queen : Bee
